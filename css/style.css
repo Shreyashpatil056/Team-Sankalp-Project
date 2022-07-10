@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo Bhai 2', cursive ;
+}
+
+html{
+    font-size: 62.5%;
+    /* 1 rem = 10px */
+    overflow-x: hidden;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.header {
+    padding: 0 7.9rem;
+    height: 8rem; /*100px*/
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffffa5;
+    position: fixed;
+    top: 0;
+z-index: 100;
+
+}
+
+
+.header .logo {
+    height: 12rem; /*50px: */
+}
+    
+.navbar-list {
+    display: flex;
+    gap: 4.8rem;
+    list-style: none;
+}
+
+.items:link,
+.items:visited{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #000000;
+    transition: all 0.3s ease;
+}
+
+.items:hover, .items:active{
+    color: #f7631b;
+    /* text-decoration: underline #cacaca; */
+}
+
+
+
+.section{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+}
+
+.section-one{
+    z-index: 1;
+    min-height: 752px;
+    position: relative;
+    background: url("/images/bgSankalp1.png") no-repeat center;
+    background-size: cover;
+    background-position: center bottom;
+    
+}
+
+.text-one{
+    justify-content: center;
+    text-align:left;
+   margin: 0 100px;
+   padding: 23rem 0rem;
+    color:#ffffff;
+    z-index: 100;
+    position: relative;
+    
+    
+}
+.head{
+    font-size: 50px;
+    
+}
+
+.subhead{
+    font-size: 20px;
+    color:#ffffffd8;
+}
+.para{
+    font-size: 20px;
+    color:#ffffffd8;
+}
+.btn1 {
+    background-color: #f7631b;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    LINE-HEIGHT: 5;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+.btn1:hover{
+    background-color:#132c7c;
+    
+}
+.section-two{
+    background-color: rgb(255, 255, 255);
+    margin-top: -62px;
+    
+  
+   
+}
+
+/* .section-one p,
+.section-two p{
+    font-size: 3.2rem;
+} */
+
+.container{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+.row{
+   
+    margin-left: -15px;
+    margin-right: -15px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+.colgate{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+   
+ }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.single-feature{
+    text-align: center;
+    
+   
+}
+
+.single-feature .title {
+    background: rgba(255,255,255,.15);
+    padding: 20px 0;
+    transition: all, 3s ease 0s;
+    
+}
+.single-feature .title h4 {
+    color: #fff;
+    
+}
+.single-feature .desc-wrap {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px 0 rgb(153 153 153 / 10%);
+   
+}
+
+h4{
+    font-size: 18px;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.single-feature .desc-wrap a {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mobile-navbar-btn{
+      /* hide icon */
+    display: none;    
+    cursor: pointer;
+    background: transparent;
+
+}
+
+.mobile-nav-icon{
+    width: 4rem;
+    height: 4rem;
+    color: #132c7c;
+
+}
+/* Hide close icon in dekstop only */
+.mobile-nav-icon[name="close-sharp"]{
+    display: none;
+}
+
+/*===== CSS CODE FOR RESPONSIVENESS ======*/
+
+/* 980px */
+/* 1em = 16 px then for 980px around 62em; */
+@media(max-width:62em){
+    .mobile-navbar-btn{
+        display: block;
+        z-index: 999;
+        /* border: 2px solid #132c7c; */
+        color: #132c7c;
+    }
+
+    .header{
+        position: relative;
+    }
+
+   
+    .navbar {
+        /* display: none;  ==>> if animation is required then not use display */
+        width: 100%;
+        height: 100vh;
+        background: #ffffff73;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* Transition */
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+    }
+
+    .navbar-list{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .active .navbar{       /*if active class present in navbar*/
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[name="close-sharp"] {
+        display: block;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[name="menu-sharp"] {
+        display: none;
+    }
+
+} 
+
+
+
+/* if Below 560 px */
+
+@media(max-width:62em){
+   
+    .header{
+        padding: 0 2.4rem;
+    }
+
+}
+
+
+/* Section two */
+
+@media (min-width: 1200px) {
+.container{
+    max-width: 1140px;
+}
+}
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+
+@media (min-width: 992px){
+    .colgate {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+}
+
+@media (max-width: 991px) {
+.single-feature {
+    margin-bottom: 30px;
+}
+}
+
+@media (max-width: 991px) {
+.single-feature .title {
+    background: #f7631b;
+}
+}
+
